@@ -27,6 +27,8 @@
   background: #0072CE;
   padding: 0.5rem 1rem;
   border-radius: 5px;
+  text-align: center;
+  background-color: #e0a800;
 }
 
 .user-info {
