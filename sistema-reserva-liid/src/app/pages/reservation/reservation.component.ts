@@ -34,7 +34,7 @@ export class ReservationsComponent {
     };
 
     try {
-      await addDoc(collection(this.firestore, 'reservas'), reserva);
+      await addDoc(collection(this.firestore, 'Reservations'), reserva);
       alert('¡Reserva enviada y guardada correctamente!');
       console.log('Reserva guardada:', reserva);
     } catch (error) {
