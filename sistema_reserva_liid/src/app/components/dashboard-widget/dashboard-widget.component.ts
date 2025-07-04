@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard-widget',
-  imports: [],
   templateUrl: './dashboard-widget.component.html',
-  styleUrl: './dashboard-widget.component.css'
+  styleUrls: ['./dashboard-widget.component.css']
 })
 export class DashboardWidgetComponent {
-
+  @Input() icon: string = '';
+  @Input() title: string = '';
+  @Input() value: string | number = '';
+  @Input() description: string = '';
 }

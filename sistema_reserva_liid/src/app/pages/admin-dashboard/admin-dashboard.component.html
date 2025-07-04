@@ -1,1 +1,77 @@
-<p>admin-dashboard works!</p>
+<div class="dashboard-container">
+  <h2>Dashboard</h2>
+
+  <!-- Tarjetas resumen -->
+  <div class="summary-cards">
+    <app-dashboard-widget icon="📦" title="Préstamos Activos" value="3" description="20% más que ayer"></app-dashboard-widget>
+    <app-dashboard-widget icon="💻" title="Equipos Disponibles" value="2" description="100% más que ayer"></app-dashboard-widget>
+    <app-dashboard-widget icon="📑" title="Solicitudes Pendientes" value="5" description="1 requiere atención"></app-dashboard-widget>
+    <app-dashboard-widget icon="👥i" title="Usuarios Registrados" value="5" description="5 nuevos esta semana"></app-dashboard-widget>
+  </div>
+
+  <!-- Zona media: Solicitudes recientes + Actividad reciente -->
+  <div class="middle-section">
+    <div class="solicitudes-recientes">
+      <h3>Solicitudes Recientes</h3>
+      <input type="text" placeholder="Buscar por equipo..." />
+      <select>
+        <option>Todos</option>
+        <option>Pendiente</option>
+        <option>Aprobado</option>
+        <option>Rechazado</option>
+      </select>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Equipo</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Fin</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#4</td>
+            <td>Carlos Macas</td>
+            <td>iPad Pro 12.9”</td>
+            <td>15/06/2025</td>
+            <td>17/06/2025</td>
+            <td>Pendiente</td>
+          </tr>
+          <tr>
+            <td>#3</td>
+            <td>Diego Ordóñez</td>
+            <td>Cámara Sony</td>
+            <td>10/06/2025</td>
+            <td>13/06/2025</td>
+            <td>Aprobado</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="actividad-reciente">
+      <h3>Actividad Reciente</h3>
+      <ul>
+        <li>✅ Se aprobó solicitud para Cámara Sony</li>
+        <li>✅ Equipo: Macbook Air devuelto</li>
+        <li>🕒 Nueva solicitud de préstamo</li>
+        <li><a href="#">Ver historial</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Zona inferior: gráficos -->
+  <div class="charts-section">
+    <div class="equipos-por-categoria">
+      <h4>Equipos por Categoría</h4>
+      <!-- Aquí irá el gráfico de torta (próximamente) -->
+    </div>
+    <div class="estado-equipos">
+      <h4>Estado de Equipos</h4>
+      <!-- Aquí irá el gráfico de barras (próximamente) -->
+    </div>
+  </div>
+</div>

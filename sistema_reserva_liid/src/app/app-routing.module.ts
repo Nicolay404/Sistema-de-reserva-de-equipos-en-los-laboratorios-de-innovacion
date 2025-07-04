@@ -8,7 +8,7 @@ import { EquipmentDetailComponent } from './pages/equipment-detail/equipment-det
 import { MyLoansComponent } from './pages/my-loans/my-loans.component';
 
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
-import { RequestsComponent } from './pages/requests/requests.component';
+import { ReservationsComponent } from './pages/reservation/reservation.component';
 import { ActiveLoansComponent } from './pages/active-loans/active-loans.component';
 import { EquipmentComponent } from './pages/equipment/equipment.component';
 import { UsersComponent } from './pages/users/users.component';
@@ -28,7 +28,7 @@ const routes: Routes = [
     component: AdminDashboardComponent,
     children: [
       { path: '', redirectTo: 'requests', pathMatch: 'full' },
-      { path: 'requests', component: RequestsComponent },
+      { path: 'reservation', component: ReservationsComponent },
       { path: 'active-loans', component: ActiveLoansComponent },
       { path: 'equipment', component: EquipmentComponent },
       { path: 'users', component: UsersComponent },

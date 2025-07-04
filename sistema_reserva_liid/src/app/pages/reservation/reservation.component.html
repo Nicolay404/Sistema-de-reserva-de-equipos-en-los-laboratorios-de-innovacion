@@ -1,1 +1,63 @@
-<p>requests works!</p>
+<div class="reservation-container">
+  <!-- Encabezado -->
+  <header class="header">
+    <img src="assets/logo-liid-utpl.png" alt="Liid UTPL" class="logo">
+    <h1>Formulario de Reserva de Equipo</h1>
+    <div class="user-info">Hola, Mayeli | Cuenta ▼</div>
+  </header>
+
+  <!-- Contenido principal -->
+  <div class="reservation-content">
+    <!-- Columna izquierda: Detalles del equipo -->
+    <section class="equipment-details">
+      <h2>Detalles del Equipo</h2>
+      <img src="https://via.placeholder.com/400x250" alt="Imagen del equipo">
+      <h3>LENOVO LEGION SLIM 7</h3>
+      <span class="status available">Disponible</span>
+      <p>ID Equipo: EQC-1011</p>
+
+      <h4>Descripción técnica</h4>
+      <ul>
+        <li>Tamaño: 16 pulgadas</li>
+        <li>Altavoces: Harman Kardon</li>
+        <li>Pantalla: 2.7K Dolby Vision</li>
+        <li>Procesador: AMD Ryzen™ 9 7940HS</li>
+        <li>Memoria RAM: 32 GB DDR5</li>
+        <li>Gráfica: NVIDIA RTX™ 4060</li>
+        <li>Almacenamiento: SSD 1TB M.2</li>
+      </ul>
+
+      <p class="history">
+        <strong>Historial de uso reciente:</strong><br>
+        Último préstamo en abril de 2024
+      </p>
+    </section>
+
+    <!-- Columna derecha: Formulario -->
+    <section class="reservation-form">
+      <h2>Formulario de Reserva</h2>
+
+      <label>Fecha de inicio de reserva:</label>
+      <input type="datetime-local" [(ngModel)]="fechaInicio">
+
+      <label>Fecha de devolución:</label>
+      <input type="datetime-local" [(ngModel)]="fechaDevolucion">
+
+      <label>Motivo de uso:</label>
+      <textarea [(ngModel)]="motivoUso" rows="4" placeholder="Describe el motivo de tu reserva"></textarea>
+
+      <label class="terms">
+        <input type="checkbox" [(ngModel)]="aceptaTerminos">
+        Acepto los términos del préstamo
+      </label>
+
+      <button (click)="enviarReserva()">Enviar Reserva</button>
+    </section>
+  </div>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <a href="#">Información de contacto</a> |
+    <a href="#">Términos y condiciones</a>
+  </footer>
+</div>

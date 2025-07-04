@@ -1,0 +1,140 @@
+/* Contenedor principal */
+.reservation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  width: 80px;
+}
+
+.header h1 {
+  flex: 1;
+  font-size: 1.8rem;
+  color: #fff;
+  background: #0072CE;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.user-info {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Contenido principal */
+.reservation-content {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Columna izquierda */
+.equipment-details {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.equipment-details img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.equipment-details h2 {
+  margin-top: 0;
+  color: #0072CE;
+}
+
+.status.available {
+  display: inline-block;
+  background: #28a745;
+  color: #fff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.history {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Columna derecha */
+.reservation-form {
+  flex: 1;
+  background: #f1f1f1;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.reservation-form h2 {
+  margin-top: 0;
+  color: #0072CE;
+}
+
+.reservation-form label {
+  font-weight: bold;
+}
+
+.reservation-form input,
+.reservation-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.reservation-form .terms {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reservation-form button {
+  background: #FFC107;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.reservation-form button:hover {
+  background: #e0a800;
+}
+
+/* Pie de página */
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #0072CE;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
