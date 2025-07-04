@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  background: #0072CE;
 }
 
 .logo {
@@ -30,7 +31,7 @@
 
 .user-info {
   font-size: 0.9rem;
-  color: #333;
+  color: white;
 }
 
 /* Contenido principal */

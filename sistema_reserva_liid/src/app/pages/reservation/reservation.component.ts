@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms'; // Necesario para [(ngModel)]
 
 @Component({
   selector: 'app-reservations',
+  standalone: true,
+  imports: [FormsModule], // Agrega FormsModule
   templateUrl: './reservation.component.html',
   styleUrls: ['./reservation.component.css']
 })
+
 export class ReservationsComponent {
   fechaInicio: string = '';
   fechaDevolucion: string = '';
@@ -26,4 +30,3 @@ export class ReservationsComponent {
     alert('¡Reserva enviada correctamente!');
   }
 }
-
