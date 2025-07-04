@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "equipment-reservation-backend",
+    "backend": "equipment-reservation-backend"
+  },
+  "targets": {},
+  "etags": {}
+}
