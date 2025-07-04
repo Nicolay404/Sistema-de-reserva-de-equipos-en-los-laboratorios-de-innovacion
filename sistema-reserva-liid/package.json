@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:sistema_reserva_liid": "node dist/sistema_reserva_liid/server/server.mjs"
+    "serve:ssr:sistema-reserva-liid": "node dist/sistema-reserva-liid/server/server.mjs"
   },
   "private": true,
   "dependencies": {

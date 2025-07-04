@@ -1,18 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReservationsComponent } from './reservation.component';
-@Component({
-  standalone: true,
-  selector: 'app-reservations',
-  templateUrl: './reservation.component.html',
-})
 
-describe('RequestsComponent', () => {
+describe('ReservationsComponent', () => {
   let component: ReservationsComponent;
   let fixture: ComponentFixture<ReservationsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReservationsComponent]
+      imports: [ReservationsComponent] // si es standalone
     })
     .compileComponents();
 

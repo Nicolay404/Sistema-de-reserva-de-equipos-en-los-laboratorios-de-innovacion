@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sistema_reserva_liid": {
+    "sistema-reserva-liid": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/sistema_reserva_liid",
+            "outputPath": "dist/sistema-reserva-liid",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "sistema_reserva_liid:build:production"
+              "buildTarget": "sistema-reserva-liid:build:production"
             },
             "development": {
-              "buildTarget": "sistema_reserva_liid:build:development"
+              "buildTarget": "sistema-reserva-liid:build:development"
             }
           },
           "defaultConfiguration": "development"
