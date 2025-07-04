@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // Necesario para [(ngModel)]
+import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-reservations',
@@ -15,18 +16,30 @@ export class ReservationsComponent {
   motivoUso: string = '';
   aceptaTerminos: boolean = false;
 
-  enviarReserva() {
-    if (!this.aceptaTerminos) {
-      alert('Debes aceptar los términos del préstamo.');
+  constructor(private firestore: Firestore) { }
+
+  async enviarReserva() {
+    if (!this.aceptaTerminos || !this.fechaInicio || !this.fechaDevolucion || !this.motivoUso.trim()) {
+      alert('Por favor completa todos los campos y acepta los términos.');
       return;
     }
 
-    console.log('Reserva enviada:', {
+    const reserva = {
+      equipoId: 'EQC-1011', // Se puede volver dinámico
       fechaInicio: this.fechaInicio,
       fechaDevolucion: this.fechaDevolucion,
-      motivo: this.motivoUso
-    });
+      motivoUso: this.motivoUso,
+      usuario: 'Nayeli', // Luego puedes obtenerlo del estado global
+      fechaRegistro: new Date()
+    };
 
-    alert('¡Reserva enviada correctamente!');
+    try {
+      await addDoc(collection(this.firestore, 'reservas'), reserva);
+      alert('¡Reserva enviada y guardada correctamente!');
+      console.log('Reserva guardada:', reserva);
+    } catch (error) {
+      console.error('Error al guardar la reserva:', error);
+      alert('Ocurrió un error al guardar la reserva. Intenta nuevamente.');
+    }
   }
 }
