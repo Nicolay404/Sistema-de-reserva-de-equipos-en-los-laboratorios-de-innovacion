@@ -62,7 +62,7 @@
           {{ equipo.estado }}
         </span>
         <p class="ubicacion">Ubicación: {{ equipo.ubicacion }}</p>
-        <button class="consultar-btn">Consultar</button>
+        <button class="consultar-btn" (click)="mostrarModal(equipo)">Consultar</button>
       </div>
     </div>
   </main>
@@ -106,3 +106,13 @@
     <a href="#">Términos y Condiciones</a>
   </div>
 </footer>
+
+<div class="modal-backdrop" *ngIf="equipoSeleccionado">
+  <div class="modal-window">
+    <h2>{{ equipoSeleccionado.nombre }}</h2>
+    <p>Estado: {{ equipoSeleccionado.estado }}</p>
+    <p>Ubicación: {{ equipoSeleccionado.ubicacion }}</p>
+    <p>Tipo: {{ equipoSeleccionado.tipo }}</p>
+    <button (click)="cerrarModal()">Cerrar</button>
+  </div>
+</div>
