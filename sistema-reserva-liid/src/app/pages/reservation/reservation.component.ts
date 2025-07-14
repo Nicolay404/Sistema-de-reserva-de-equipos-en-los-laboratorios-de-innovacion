@@ -20,39 +20,33 @@ export class ReservationsComponent {
   constructor(private firestore: Firestore) { }
 
   async enviarReserva() {
-    if (!this.aceptaTerminos || !this.fechaInicio || !this.fechaDevolucion || !this.motivoUso.trim()) {
-      alert('Por favor completa todos los campos y acepta los términos.');
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+
+    const inicio = new Date(this.fechaInicio);
+    const fin = new Date(this.fechaDevolucion);
+
+    if (!this.aceptaTerminos) {
+      alert('Debes aceptar los términos del préstamo.');
       return;
     }
 
-
-    if (this.fechaInicio < this.hoy) {
+    if (inicio < hoy) {
       alert('La fecha de inicio no puede ser anterior a hoy.');
       return;
     }
 
-    if (this.fechaDevolucion < this.fechaInicio) {
+    if (fin < inicio) {
       alert('La fecha de devolución no puede ser anterior a la fecha de inicio.');
       return;
     }
 
-
-    const reserva = {
-      equipoId: 'EQC-1011', // Se puede volver dinámico
+    console.log('Reserva enviada:', {
       fechaInicio: this.fechaInicio,
       fechaDevolucion: this.fechaDevolucion,
-      motivoUso: this.motivoUso,
-      usuario: 'Nayeli', // Luego puedes obtenerlo del estado global
-      fechaRegistro: new Date()
-    };
-
-    try {
-      await addDoc(collection(this.firestore, 'Reservations'), reserva);
-      alert('¡Reserva enviada y guardada correctamente!');
-      console.log('Reserva guardada:', reserva);
-    } catch (error) {
-      console.error('Error al guardar la reserva:', error);
-      alert('Ocurrió un error al guardar la reserva. Intenta nuevamente.');
-    }
+      motivo: this.motivoUso
+    });
+    alert('¡Reserva enviada correctamente!');
   }
+
 }
