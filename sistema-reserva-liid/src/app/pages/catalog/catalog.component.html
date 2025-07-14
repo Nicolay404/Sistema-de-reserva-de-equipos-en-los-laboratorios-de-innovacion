@@ -110,9 +110,19 @@
 <div class="modal-backdrop" *ngIf="equipoSeleccionado">
   <div class="modal-window">
     <h2>{{ equipoSeleccionado.nombre }}</h2>
-    <p>Estado: {{ equipoSeleccionado.estado }}</p>
-    <p>Ubicación: {{ equipoSeleccionado.ubicacion }}</p>
-    <p>Tipo: {{ equipoSeleccionado.tipo }}</p>
-    <button (click)="cerrarModal()">Cerrar</button>
+    <ul class="specs-list">
+      <li><strong>Estado:</strong> {{ equipoSeleccionado.estado }}</li>
+      <li><strong>Ubicación:</strong> {{ equipoSeleccionado.ubicacion }}</li>
+      <li><strong>Tipo:</strong> {{ equipoSeleccionado.tipo }}</li>
+      <!-- Puedes añadir más detalles si tienes, como tamaño, RAM, etc. -->
+    </ul>
+    <button *ngIf="equipoSeleccionado.estado === 'Disponible'" class="solicitar-btn">
+  Solicitar Préstamo
+</button>
+    <div class="modal-footer-links">
+      <a href="#">Información de contacto</a> |
+      <a href="#">Políticas de préstamo</a>
+    </div>
+    <button class="cerrar-modal" (click)="cerrarModal()">Cerrar</button>
   </div>
 </div>
