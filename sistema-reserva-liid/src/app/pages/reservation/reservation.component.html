@@ -11,7 +11,9 @@
     <!-- Columna izquierda: Detalles del equipo -->
     <section class="equipment-details">
       <h2>Detalles del Equipo</h2>
-      <img src="https://mobilestore.ec/wp-content/uploads/2022/09/Lenovo-Legion-Slim-82TF000RUS-GAMING-Mobile-Store-Ecuador1.jpg" width="360px" alt="Imagen del equipo">
+      <img
+  src="https://mobilestore.ec/wp-content/uploads/2022/09/Lenovo-Legion-Slim-82TF000RUS-GAMING-Mobile-Store-Ecuador1.jpg"
+  alt="Imagen del equipo">
       <h3>LENOVO LEGION SLIM 7</h3>
       <span class="status available">Disponible</span>
       <p>ID Equipo: EQC-1011</p>
@@ -38,10 +40,12 @@
       <h2>Formulario de Reserva</h2>
 
       <label>Fecha de inicio de reserva:</label>
-      <input type="datetime-local" [(ngModel)]="fechaInicio">
+      <input type="datetime-local" [(ngModel)]="fechaInicio" [min]="hoy + 'T00:00'" required>
+
 
       <label>Fecha de devolución:</label>
-      <input type="datetime-local" [(ngModel)]="fechaDevolucion">
+      <input type="datetime-local" [(ngModel)]="fechaDevolucion" [min]="fechaInicio" required>
+
 
       <label>Motivo de uso:</label>
       <textarea [(ngModel)]="motivoUso" rows="4" placeholder="Describe el motivo de tu reserva"></textarea>

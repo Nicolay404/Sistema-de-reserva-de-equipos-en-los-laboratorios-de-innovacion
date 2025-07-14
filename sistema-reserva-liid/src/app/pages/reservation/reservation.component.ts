@@ -11,6 +11,7 @@ import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 })
 
 export class ReservationsComponent {
+  hoy: string = new Date().toISOString().split('T')[0]; // Fecha actual en formato YYYY-MM-DD
   fechaInicio: string = '';
   fechaDevolucion: string = '';
   motivoUso: string = '';
@@ -23,6 +24,18 @@ export class ReservationsComponent {
       alert('Por favor completa todos los campos y acepta los términos.');
       return;
     }
+
+
+    if (this.fechaInicio < this.hoy) {
+      alert('La fecha de inicio no puede ser anterior a hoy.');
+      return;
+    }
+
+    if (this.fechaDevolucion < this.fechaInicio) {
+      alert('La fecha de devolución no puede ser anterior a la fecha de inicio.');
+      return;
+    }
+
 
     const reserva = {
       equipoId: 'EQC-1011', // Se puede volver dinámico
