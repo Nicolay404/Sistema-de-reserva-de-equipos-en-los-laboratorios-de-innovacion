@@ -57,8 +57,7 @@
       <div class="card" *ngFor="let equipo of equiposFiltrados">
         <img [src]="'https://source.unsplash.com/400x300/?' + equipo.tipo + ',' + equipo.nombre" alt="Equipo">
         <h3>{{ equipo.nombre }}</h3>
-        <span [class.available]="equipo.disponible"
-              [class.unavailable]="!equipo.disponible">
+        <span [class.available]="equipo.disponible" [class.unavailable]="!equipo.disponible">
           {{ equipo.estado }}
         </span>
         <p class="ubicacion">Ubicación: {{ equipo.ubicacion }}</p>
@@ -117,12 +116,13 @@
       <!-- Puedes añadir más detalles si tienes, como tamaño, RAM, etc. -->
     </ul>
     <button *ngIf="equipoSeleccionado.estado === 'Disponible'" class="solicitar-btn">
-  Solicitar Préstamo
-</button>
+      Solicitar Préstamo
+    </button>
+
+    <button class="cerrar-modal" (click)="cerrarModal()">Cerrar</button>
     <div class="modal-footer-links">
       <a href="#">Información de contacto</a> |
       <a href="#">Políticas de préstamo</a>
     </div>
-    <button class="cerrar-modal" (click)="cerrarModal()">Cerrar</button>
   </div>
 </div>
