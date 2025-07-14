@@ -1,34 +1,104 @@
-/* Tarjetas */
-.card {
-  background: white;
-  padding: 1rem;
+/* Layout principal */
+.catalog-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Filtros */
+.filters {
+  width: 260px;
+  background-color: #fff;
+  padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+}
+.filters h2 {
+  margin-bottom: 1rem;
+  color: #003865;
+}
+.filters label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+.filters select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+.filters button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.filters button:first-of-type {
+  background-color: #003865;
+  color: white;
+}
+.filters button:last-of-type {
+  background-color: #ffc107;
+  color: #333;
+}
+
+/* Tarjetas */
+.catalog-main h1 {
+  margin-bottom: 1rem;
+  color: #003865;
+  font-family: 'Segoe UI', sans-serif;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres tarjetas por fila */
+  gap: 2rem;
+  padding: 1rem 0;
+}
+.card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
 }
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 .card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 .card h3 {
-  margin-top: 0.8rem;
-  font-size: 1.1rem;
-  color: #333;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #003865;
+}
+.ubicacion {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 0.3rem;
 }
 .consultar-btn {
   margin-top: 1rem;
   background-color: #ffc107;
-  color: #333;
+  color: #003865;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -39,36 +109,20 @@
 .available {
   color: #28a745;
   font-weight: bold;
+  margin-top: 0.5rem;
 }
 .unavailable {
   color: #dc3545;
   font-weight: bold;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-}
-.catalog-container {
-  display: flex;
-  gap: 2rem;
-  padding: 2rem;
-}
-.filters {
-  width: 250px;
-  background-color: #f7f7f7;
-  padding: 1rem;
-  border-radius: 10px;
-}
-.catalog-main {
-  flex: 1;
+  margin-top: 0.5rem;
 }
 
 /* Encabezado */
 .liid-header {
   background-color: #003865;
   color: white;
-  padding: 1rem;
+  padding: 1rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
 }
 .liid-header-container {
   display: flex;
@@ -83,16 +137,17 @@
   align-items: center;
   gap: 0.5rem;
 }
-.search-group input {
-  padding: 0.3rem;
-  border-radius: 4px;
+.search-group input,
+.search-group select {
+  padding: 0.5rem;
+  border-radius: 6px;
   border: none;
 }
 .search-btn {
   background-color: #ffc107;
   border: none;
-  padding: 0.4rem 0.7rem;
-  border-radius: 4px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
   cursor: pointer;
 }
 .liid-nav a {
@@ -103,8 +158,8 @@
 }
 .user-btn {
   background-color: #ffc107;
-  padding: 0.3rem 0.6rem;
-  border-radius: 5px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
   color: #333;
 }
 
@@ -113,14 +168,16 @@
   background-color: #003865;
   color: white;
   padding: 2rem;
-  font-size: 0.9rem;
+  font-family: 'Segoe UI', sans-serif;
 }
 .footer-top {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.footer-contact, .footer-logo, .footer-links {
+.footer-contact,
+.footer-logo,
+.footer-links {
   margin-bottom: 1rem;
 }
 .footer-logo img {
@@ -147,4 +204,5 @@
   margin-top: 1rem;
   padding-top: 1rem;
   text-align: center;
+  font-size: 0.85rem;
 }
