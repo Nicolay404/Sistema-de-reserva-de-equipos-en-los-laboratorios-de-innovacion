@@ -11,15 +11,78 @@ import { FormsModule } from '@angular/forms';
 })
 export class CatalogComponent {
   equipos = [
-    { nombre: 'APPLE IMAC MK472LL', disponible: true, estado: 'Disponible', ubicacion: 'LIID', tipo: 'PC' },
-    { nombre: 'LENOVO LEGION SLIM 7', disponible: true, estado: 'Disponible', ubicacion: 'XRLab', tipo: 'Laptop' },
-    { nombre: 'MACBOOK PRO 16"', disponible: false, estado: 'Ocupado', ubicacion: 'MediaLab', tipo: 'Laptop' },
-    { nombre: 'HP Pavilion Gaming', disponible: false, estado: 'Mantenimiento', ubicacion: 'LIID', tipo: 'PC' },
-    { nombre: 'ASUS ROG Zephyrus', disponible: true, estado: 'Disponible', ubicacion: 'XRLab', tipo: 'Laptop' },
-    { nombre: 'ACER Aspire 7', disponible: false, estado: 'Ocupado', ubicacion: 'MediaLab', tipo: 'Laptop' },
-    { nombre: 'DELL XPS 13', disponible: true, estado: 'Disponible', ubicacion: 'LIID', tipo: 'Laptop' },
-    { nombre: 'Microsoft Surface Pro', disponible: true, estado: 'Disponible', ubicacion: 'XRLab', tipo: 'Tablet' },
-    { nombre: 'iPad Pro 12.9"', disponible: false, estado: 'Mantenimiento', ubicacion: 'MediaLab', tipo: 'Tablet' }
+    {
+      nombre: 'APPLE IMAC MK472LL',
+      disponible: true,
+      estado: 'Disponible',
+      ubicacion: 'LIID',
+      tipo: 'PC',
+      imagen: 'assets/equipos/imac.jpg'
+    },
+    {
+      nombre: 'LENOVO LEGION SLIM 7',
+      disponible: true,
+      estado: 'Disponible',
+      ubicacion: 'XRLab',
+      tipo: 'Laptop',
+      imagen: 'assets/equipos/lenovo-legion.jpg'
+    },
+    {
+      nombre: 'MACBOOK PRO 16"',
+      disponible: false,
+      estado: 'Ocupado',
+      ubicacion: 'MediaLab',
+      tipo: 'Laptop',
+      imagen: 'assets/equipos/macbook.jpg'
+    },
+    {
+      nombre: 'HP Pavilion Gaming',
+      disponible: false,
+      estado: 'Mantenimiento',
+      ubicacion: 'LIID',
+      tipo: 'PC',
+      imagen: 'assets/equipos/hp-pavilion.jpg'
+    },
+    {
+      nombre: 'ASUS ROG Zephyrus',
+      disponible: true,
+      estado: 'Disponible',
+      ubicacion: 'XRLab',
+      tipo: 'Laptop',
+      imagen: 'assets\equipos\Apple IMAS.jpg'
+    },
+    {
+      nombre: 'ACER Aspire 7',
+      disponible: false,
+      estado: 'Ocupado',
+      ubicacion: 'MediaLab',
+      tipo: 'Laptop',
+      imagen: 'assets/equipos/acer-aspire.jpg'
+    },
+    {
+      nombre: 'DELL XPS 13',
+      disponible: true,
+      estado: 'Disponible',
+      ubicacion: 'LIID',
+      tipo: 'Laptop',
+      imagen: 'assets/equipos/dell-xps.jpg'
+    },
+    {
+      nombre: 'Microsoft Surface Pro',
+      disponible: true,
+      estado: 'Disponible',
+      ubicacion: 'XRLab',
+      tipo: 'Tablet',
+      imagen: 'assets/equipos/surface-pro.jpg'
+    },
+    {
+      nombre: 'iPad Pro 12.9"',
+      disponible: false,
+      estado: 'Mantenimiento',
+      ubicacion: 'MediaLab',
+      tipo: 'Tablet',
+      imagen: 'assets/equipos/ipad-pro.jpg'
+    }
   ];
 
   equipoSeleccionado: any = null;
@@ -45,6 +108,7 @@ export class CatalogComponent {
   mostrarModal(equipo: any) {
     this.equipoSeleccionado = equipo;
   }
+
   cerrarModal() {
     this.equipoSeleccionado = null;
   }
